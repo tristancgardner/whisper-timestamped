@@ -1335,7 +1335,9 @@ def _transcribe_timestamped_naive(
 
         ##! POST-TRANSCRIPTION ALIGNMENT PROGRESS BAR
         if callback is not None:
-            callback(segments_length, description="Aligning word-level timecodes", reset=True)
+            callback(
+                segments_length, description="Aligning word-level timecodes", reset=True
+            )
 
         for i_segment, segment in enumerate(whisper_segments):
 
