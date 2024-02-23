@@ -1303,7 +1303,7 @@ def _transcribe_timestamped_naive(
     ##Callback function
     # if callback is not None:
     #     print("\n1st callback after transcription")
-    #     callback()
+    #     callback
 
     try:
 
@@ -1335,14 +1335,17 @@ def _transcribe_timestamped_naive(
 
         ##! POST-TRANSCRIPTION ALIGNMENT PROGRESS BAR
         if callback is not None:
-            callback(
-                segments_length, description="Aligning word-level timecodes", reset=True
-            )
+            callback(0, description="Aligning word-level timecodes...", reset=True)
 
         for i_segment, segment in enumerate(whisper_segments):
+            progress_segment_percent = (i_segment + 1) / segments_length
 
             if callback is not None:
-                callback(1)
+                callback(
+                    progress_segment_percent,
+                    total_frames=segments_length,
+                    description="Aligning word-level timecodes...",
+                )
 
             start = end = tokens = None
             if trust_whisper_timestamps:
