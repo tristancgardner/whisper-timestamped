@@ -43,7 +43,7 @@ setup(
     long_description_content_type="text/markdown",
     python_requires=">=3.7",
     author="Jeronymous",
-    url="https://github.com/linto-ai/whisper-timestamped",
+    url="https://github.com/tristancgardner/whisper_timestamped",
     license=license,
     packages=find_packages(exclude=["tests*"]),
     install_requires=install_requires,
