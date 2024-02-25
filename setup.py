@@ -19,7 +19,7 @@ if os.path.exists(required_packages_filename):
 
 version = None
 license = None
-with open(os.path.join(os.path.dirname(__file__), "transcribe.py")) as f:
+with open(os.path.join(os.path.dirname(__file__), "whisper_timestamped", "transcribe.py")) as f:
     for line in f:
         if line.strip().startswith("__version__"):
             version = line.split("=")[1].strip().strip("\"'")
@@ -34,7 +34,7 @@ assert version and license
 description = "Multi-lingual Automatic Speech Recognition (ASR) based on Whisper models, with accurate word timestamps, access to language detection confidence, several options for Voice Activity Detection (VAD), and more."
 
 setup(
-    name="whisper_timestamped",
+    name="whisper-timestamped",
     py_modules=["whisper_timestamped"],
     version=version,
     description=description,
