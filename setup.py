@@ -34,7 +34,7 @@ assert version and license
 description = "Multi-lingual Automatic Speech Recognition (ASR) based on Whisper models, with accurate word timestamps, access to language detection confidence, several options for Voice Activity Detection (VAD), and more."
 
 setup(
-    name="whisper-timestamped",
+    name="whisper_timestamped",
     py_modules=["whisper_timestamped"],
     version=version,
     description=description,
